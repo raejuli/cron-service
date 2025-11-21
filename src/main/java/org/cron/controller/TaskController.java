@@ -23,4 +23,14 @@ public class TaskController {
     public Task[] getAllTasks() {
         return new Task[]{};
     }
+
+    @GetMapping("{id}")
+    public Task getTaskById(@PathVariable String id) {
+        return new Task();
+    }
+
+    @PutMapping("{id}")
+    public void updateTaskById(@PathVariable String id) {
+
+    }
 }
