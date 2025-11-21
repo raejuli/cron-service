@@ -1,19 +1,26 @@
 package org.cron.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.cron.dto.RetryPolicy;
 import org.cron.dto.Task;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.cron.service.TaskService;
+import org.springframework.web.bind.annotation.*;
+
+import java.sql.Array;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/task")
 public class TaskController {
+    private TaskService service;
+
+    @PostMapping
+    public void registerTask(@RequestBody Task task) {
+
+    }
 
     @GetMapping
-    public RetryPolicy hello(@RequestBody Task task) {
-        RetryPolicy policy = task.getRetryPolicy();
-        return policy;
+    public Task[] getAllTasks() {
+        return new Task[]{};
     }
 }
